@@ -1,4 +1,4 @@
-
+/* 변수 선언
 console.log("1+1=?"); // console.log 는 디버그용 메세지처럼, 콘솔창에 띄울 수 있다.
 
 const a= 5; //const = 변수 선언
@@ -20,3 +20,40 @@ console.log("No, You are " + hisName);
 //const = 변해서는 안되는 값을 지정할 때 쓴다. ex)아이템 코드, 몬스터 데이터 등...
 //let = 변해도 되는 값을 지정할 때 쓴다. ex)레벨, 경험치 등...
 //var = 과거에 사용한 변수 선언 함수. let과 역할은 같으나, 변경해서 안되는 값을 변경했을 때 경고해주는 보호장치가 없어서 현재는 잘 사용하지 않는다. gml에서 쓰던거랑 닮았다.
+
+*/
+
+/* 변수 인자
+const amIGood = false; // true, false : 참/거짓
+console.log(amIGood);
+const amIDead = null; // null : 공백값
+console.log(amIDead);
+let something; // undefined : 정의되지 않은 값
+console.log(something);
+*/
+
+/* 리스트
+const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]; //배열
+
+console.log(daysOfWeek);
+
+console.log(daysOfWeek[0]);
+
+daysOfWeek.push("8th day");
+
+console.log(daysOfWeek);
+*/
+
+const player = {
+    name: "MV",
+    levels: 87,
+    isDead: false,
+    isMarried: null,
+}
+
+console.log(player);
+console.log(player.name);
+player.isDead = true;
+console.log(player);
+player.levels += 10;
+console.log(player.levels);
