@@ -44,6 +44,7 @@ daysOfWeek.push("8th day");
 console.log(daysOfWeek);
 */
 
+/* 오브젝트(객체)
 const player = {
     name: "MV",
     levels: 87,
@@ -57,3 +58,86 @@ player.isDead = true;
 console.log(player);
 player.levels += 10;
 console.log(player.levels);
+*/
+
+/* 함수
+function sayHello(name, age){    
+    console.log("Hello, my name is " + name + ", I'm " + age +  " years old.");
+}
+
+function plus(a, b){
+    console.log(a + " + " + b + " = " + ( a + b ));
+}
+*/
+
+/* 객체 내 함수
+const player = {
+    name : "Yongsa",
+    sayHello(otherName){
+        console.log("Hello, " + otherName + "! Nice to meet you!");
+    }
+}
+console.log(player.name);
+player.sayHello("lynn");
+player.sayHello(player.name);
+*/
+
+/* 예제
+const calculator = {
+    add: function(a,b){
+        console.log(a+b);
+    },
+    minus: function(a,b){
+        console.log(a-b);
+    },
+    multiply: function(a,b){
+        console.log(a*b);
+    },
+    divide: function(a,b){
+        console.log(a/b);
+    },
+    powerof: function(a,b){
+        console.log(a**b);
+    }
+}
+calculator.add(2,2);
+calculator.minus(7,4);
+calculator.multiply(9,6);
+calculator.divide(13,2);
+calculator.powerof(17,3);
+*/
+
+/* 함수의 결과값
+const age = 87;
+function calKorAge(ageOfForeigner){
+    return ageOfForeigner + 2;
+}
+const korAge = calKorAge(age);
+
+console.log(korAge);
+*/
+
+/* 예제 수정
+const calculator = {
+    add: function(a,b){
+        return (a+b);
+    },
+    minus: function(a,b){
+        return (a-b);
+    },
+    multiply: function(a,b){
+        return (a*b);
+    },
+    divide: function(a,b){
+        return (a/b);
+    },
+    powerof: function(a,b){
+        return (a**b);
+    }
+}
+const addResult = calculator.add(5,2);
+const minusresult = calculator.minus(addResult,4);
+const multiplyresult = calculator.multiply(10,minusresult);
+const divideResult = calculator.divide(multiplyresult,addResult);
+const powerResult = calculator.powerof(divideResult,minusresult);
+*/
