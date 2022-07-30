@@ -141,3 +141,28 @@ const multiplyresult = calculator.multiply(10,minusresult);
 const divideResult = calculator.divide(multiplyresult,addResult);
 const powerResult = calculator.powerof(divideResult,minusresult);
 */
+
+/* if문 연습
+const age = parseInt(prompt("How old are you?"));
+const ageCal = function(numOfAge){
+    if(isNaN(numOfAge) || age < 0){
+        return "Please write a real positive number.";
+    }
+    else if(age < 19){
+        return "You are too young.";
+    }
+    else if (age >= 19 && age <= 50){
+        return "You can drink.";
+    }
+    else if (age >50 && age <=80){
+        return "You should exersise.";
+    }
+    else if (age === 100){
+        return "Whow...";
+    }
+    else if (age > 80){
+        return "You can do whatever you want.";
+    }
+}
+console.log(ageCal(age));
+*/
