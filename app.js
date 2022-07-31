@@ -166,3 +166,8 @@ const ageCal = function(numOfAge){
 }
 console.log(ageCal(age));
 */
+/* document(HTML에 JS로 영향을 주는 법)
+document.title = "Hello from JS!";
+const title = document.getElementById("title");
+title.innerText="Got you!"
+*/
