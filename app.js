@@ -167,7 +167,104 @@ const ageCal = function(numOfAge){
 console.log(ageCal(age));
 */
 /* document(HTML에 JS로 영향을 주는 법)
+
+//getElementsById : 속성을 id로 찾을 때
 document.title = "Hello from JS!";
-const title = document.getElementById("title");
+const title = document.getElementById("something");
 title.innerText="Got you!"
+
+//getElementsByClassName : 속성을 class로 찾을 때
+const hellu = document.getElementsByClassName("hello");
+console.log(hellu);
+
+//getElementsByTagName : 속성을 tag로 찾을 때
+const newTitle = document.getElementsByTagName("h2");
+console.log(newTitle);
+
+//getElementsByName : 속성을 name으로 찾을 때
+
+//querySelector : HTML 원문을 보듯 속성을 찾을 수 있다, 단일. 
+const altTitle = document.querySelector(".hello h2:first-child");
+console.log(altTitle);
+
+//querySelectorAll : querySelector의 다수 버전.
+const alsoTitle = document.querySelectorAll(".hello h2");
+console.log(alsoTitle);
+//querySelector의 문법 : .(클래스), #(id), -child(n번째 검색된 것), form(form)
+ */
+/* 이벤트 연습
+
+//공통적인 참조사항
+const h1 = document.querySelector("div.hello:first-child h1");
+h1.innerText="Hi";
+
+// 첫 이벤트 연습
+const eventPrac ={
+    handleTitleEnter : function(){
+        h1.innerText="The mouse is HERE!";
+    },
+    handleTitleLeave : function(){
+        h1.innerText="The mouse is GONE!";
+        },
+    handleTitleClick : function(){
+        h1.style.color="blue";
+    },
+    handleWindowResize : function(){
+        document.body.style.backgroundColor = "tomato";
+    },
+    handleWindowCopy : function(){
+        alert("Don't copy me!");
+    },
+    handleWindowOffline : function(){
+        alert("There is no internet. HaHA!");
+    },
+    handleWindowOnline : function(){
+        alert("ALL GOOOOOOOD");
+    }
+}
+
+h1.onclick=eventPrac.handleTitleClick;
+h1.onmouseenter=eventPrac.handleTitleEnter;
+h1.onmouseleave=eventPrac.handleTitleLeave;
+window.addEventListener("resize", eventPrac.handleWindowResize);
+window.addEventListener("copy", eventPrac.handleWindowCopy);
+window.addEventListener("offline",eventPrac.handleWindowOffline);
+window.addEventListener("online",eventPrac.handleWindowOnline);
+
+// 이벤트에 if문 넣어보기
+function handleLetterClick(){
+    const currentColor = h1.style.color;
+    let newColor;
+    if(currentColor == "blue"){
+        newColor="tomato";
+    }
+    else{
+        newColor="blue";
+    }
+    h1.style.color=newColor;
+}
+
+// CSS의 상태를 조작하는 방식
+
+//if문 사용
+function handleLetterClick(){
+    const stateNow=h1.classList;
+    const stateActive = "active";
+    if(stateNow.contains(stateActive))
+    {
+        stateNow.remove(stateActive);
+    }
+    else{
+        stateNow.add(stateActive);
+    }
+}
+
+//toggle 사용
+function handleLetterClick(){
+    h1.classList.toggle("active");
+}
+
+//공통적인 행동 이벤트
+h1.onclick=handleLetterClick;
 */
+
