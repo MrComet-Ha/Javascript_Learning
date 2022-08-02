@@ -268,3 +268,24 @@ function handleLetterClick(){
 h1.onclick=handleLetterClick;
 */
 
+/* 이벤트와 기본행동, preventDefault
+const loginForm = document.querySelector("#login_form");
+const loginInput = loginForm.querySelector("input");
+const link = document.querySelector("#link_nomad")
+
+function handleLoginSubmit(hisname){
+    hisname.preventDefault();
+    console.log(loginInput.value);
+    loginInput.value = "";
+    const nameInput = loginInput.value;
+    console.log(nameInput);
+}
+function handleLinkClick(event){
+    event.preventDefault();
+    console.dir(event);
+    alert("click");
+}
+
+loginForm.addEventListener("submit",handleLoginSubmit);
+link.addEventListener("click",handleLinkClick);
+*/
