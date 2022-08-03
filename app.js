@@ -268,24 +268,32 @@ function handleLetterClick(){
 h1.onclick=handleLetterClick;
 */
 
-/* 이벤트와 기본행동, preventDefault
+
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
+
 const loginForm = document.querySelector("#login_form");
-const loginInput = loginForm.querySelector("input");
-const link = document.querySelector("#link_nomad")
+const loginInput = document.querySelector("input");
+const greet = document.querySelector("#greeting");
+const savedName = localStorage.getItem(USERNAME_KEY);
 
-function handleLoginSubmit(hisname){
-    hisname.preventDefault();
-    console.log(loginInput.value);
-    loginInput.value = "";
-    const nameInput = loginInput.value;
-    console.log(nameInput);
-}
-function handleLinkClick(event){
-    event.preventDefault();
-    console.dir(event);
-    alert("click");
+function greetUser(){
+    greet.innerText = `Hello, ${savedName}!`;
+    greet.classList.remove(HIDDEN_CLASSNAME);
 }
 
-loginForm.addEventListener("submit",handleLoginSubmit);
-link.addEventListener("click",handleLinkClick);
-*/
+function handleLoginSubmit(evt){
+    evt.preventDefault();
+    const username = loginInput.value;
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    localStorage.setItem(USERNAME_KEY, username);
+    greetUser();
+}
+
+if(savedName === null){
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit",handleLoginSubmit);
+}
+else{
+    greetUser();
+}
