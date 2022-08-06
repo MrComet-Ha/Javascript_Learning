@@ -278,7 +278,7 @@ const greet = document.querySelector("#greeting");
 const savedName = localStorage.getItem(USERNAME_KEY);
 
 function greetUser(){
-    greet.innerText = `Hello, ${savedName}!`;
+    greet.innerText = `Hello, ${localStorage.getItem(USERNAME_KEY)}!`;
     greet.classList.remove(HIDDEN_CLASSNAME);
 }
 
